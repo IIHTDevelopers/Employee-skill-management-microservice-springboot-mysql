@@ -6,9 +6,15 @@ import java.util.Objects;
 
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+
+
+@Entity
 public class Certificates {
 
-	
+	@Id
 	private Integer id;
 	private Integer employeeId;
 	private String skillName;
