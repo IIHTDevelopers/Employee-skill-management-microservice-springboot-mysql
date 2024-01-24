@@ -15,7 +15,7 @@ public class Skills {
 	private String description;
 	private String profeciencyLevel;
 	private String yearsOfExperience;
-	@Transient
+	
 	private String environment;
 
 	public Integer getId() {
