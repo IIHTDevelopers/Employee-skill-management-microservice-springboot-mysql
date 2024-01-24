@@ -1,9 +1,14 @@
 package com.iiht.training.skills.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+
+
+@Entity
 public class Skills {
 
-
+	@Id
 	private Integer id;
 	private Integer employeeId;
 	private String name;
