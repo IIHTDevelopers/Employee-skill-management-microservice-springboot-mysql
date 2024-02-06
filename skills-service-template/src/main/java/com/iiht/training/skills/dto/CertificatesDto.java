@@ -17,8 +17,10 @@ public class CertificatesDto {
 	
 	private String description;
 	
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dateOfIssue;
 
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dateOfExpiry;
 	
 	private Integer passingScore;
