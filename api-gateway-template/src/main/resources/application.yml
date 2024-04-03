@@ -1,0 +1,39 @@
+server:
+  port: 9001
+spring:
+ cloud:
+   gateway:
+     routes:
+       - id: employee-service
+         uri: lb://employee-service
+         predicates:
+           - Path=/api/employees/**
+         filters:
+           - AuthenticationFilter
+
+       - id: certificates-service
+         uri: lb://certificates-service
+         predicates:
+           - Path=/api/certificates/**
+         filters:
+           - AuthenticationFilter
+
+       - id: skills-service
+         uri: lb://skills-service
+         predicates:
+           - Path=/api/skills/**
+         filters:
+           - AuthenticationFilter
+
+       - id: identity-service
+         uri: lb://identity-service
+         predicates:
+           - Path=/auth/**
+
+ application:
+   name: api-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
